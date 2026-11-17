@@ -1,0 +1,11 @@
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use App\ConvertirCommand;
+
+$application = new Application();
+$command = new ConvertirCommand();
+$application->add($command);
+$application->setDefaultCommand($command->getName(), true);
+$application->run();
